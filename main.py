@@ -12,12 +12,12 @@ actors = [
     ("Scarlett", "Johansson"),
 ]
 
-genres = ["Western", "Action", "Dramma"]
+genres = [("Western",), ("Action",), ("Dramma",)]
 
 
 def main() -> QuerySet:
     # Create a new instance via `create` method.
-    for genre in genres:
+    for (genre,) in genres:
         Genre.objects.create(name=genre)
 
     for first_name, last_name in actors:
